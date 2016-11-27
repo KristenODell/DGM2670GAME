@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyMovementTrigger : MonoBehaviour {
+public class DamagingPlayer : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 	
 	}
 	
     void OnTriggerEnter()
-     {
-
-     }
+    {
+        
+    }
 }

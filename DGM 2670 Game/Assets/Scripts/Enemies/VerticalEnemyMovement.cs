@@ -2,17 +2,17 @@
 using System.Collections;
 using System;
 
-public class EnemyMovement : MonoBehaviour, IMoveEnemy
+public class VerticalEnemyMovement : MonoBehaviour, IMoveEnemy
 {
     public float speed = 1;
     private Vector3 tempPos;
 
-    public static Action HorizontalEnemyMove;
+    public static Action VerticalEnemyMove;
 
     // Use this for initialization
     void Start()
     {
-        HorizontalEnemyMove = EnemyMoveHandler;
+        VerticalEnemyMove = EnemyMoveHandler;
     }
 
     void OnTriggerEnter()
@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour, IMoveEnemy
 
     public void EnemyMoveHandler()
     {
-        tempPos.x = speed * Time.deltaTime;
+        tempPos.z = speed * Time.deltaTime;
         transform.Translate(tempPos);
     }
 }
