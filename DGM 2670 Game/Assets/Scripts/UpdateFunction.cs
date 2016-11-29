@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 
 public class UpdateFunction : MonoBehaviour
 {
+    public Text healthText;
+    public Text countdownTimer;
 
-	// Use this for initialization
-
-
-	void Start ()
+    void Start ()
     {
 
     }
@@ -20,5 +20,6 @@ public class UpdateFunction : MonoBehaviour
         VerticalEnemyMovement.VerticalEnemyMove();
         EnemyMovement.HorizontalEnemyMove();
         PlayerLife.Health();
+        Timer.Countdown(60);
     }
 }

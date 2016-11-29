@@ -13,25 +13,32 @@ public class PlayerLife : MonoBehaviour
 
 	void Start ()
     {
-        healthText = GetComponent<Text>();
-        healthText.text = "Lives: " + health;
+        Health = HealthHandler;
+        StaticVariables.originalHealth = health;
 	}
 
-    void HealthHandler ()
+    void OnTriggerEnter ()
     {
-        if (health > 0)
-        {
-            health--;
-            healthText.text = "Lives: " + health;
-        }
-        else
-        {
-            health = 0;
-            healthText.text = "Lives: " + health;
-            SceneManager.LoadScene("Level One");
-
-        }
-        
+        health--;
+        print("hit"); 
     }
 
+    public void HealthHandler()
+    {
+        switch (health)
+        {
+            case 3:
+                healthText.text = "Lives: 3";
+                break;
+            case 2:
+                healthText.text = "Lives: 2";
+                break;
+            case 1:
+                healthText.text = "Lives: 1";
+                break;
+            default:
+                healthText.text = "Lives: 0";
+                break;
+        }
+    }
 }

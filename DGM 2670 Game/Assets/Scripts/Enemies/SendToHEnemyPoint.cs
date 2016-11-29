@@ -3,14 +3,14 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public class SendToVEnemyPoints : MonoBehaviour
+public class SendToHEnemyPoint : MonoBehaviour
 {
-    public List<GameObject> vEnemies;
+    public List<GameObject> hEnemies;
 
 
     void AddToList(GameObject _go)
     {
-        vEnemies.Add(_go);
+        hEnemies.Add(_go);
     }
 
     void Start()
