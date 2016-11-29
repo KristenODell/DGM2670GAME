@@ -7,7 +7,6 @@ public class Timer : MonoBehaviour
 {
     public Text countdownTimer;
     public static Action<float> Countdown;
-    //public float temps = 60;
 
     void Awake ()
     {
@@ -16,7 +15,6 @@ public class Timer : MonoBehaviour
 
     public void CountdownHandler(float temps)
     {
-        temps -= Time.deltaTime;
         if (temps >= 0)
         {
             countdownTimer.text = "Time Remaining: " + temps.ToString("f0");

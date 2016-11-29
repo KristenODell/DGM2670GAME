@@ -7,6 +7,7 @@ public class UpdateFunction : MonoBehaviour
 {
     public Text healthText;
     public Text countdownTimer;
+    public float temps = 60;
 
     void Start ()
     {
@@ -16,10 +17,11 @@ public class UpdateFunction : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        temps -= Time.deltaTime;
         PlayerMovement.PlayerMove(10);
         VerticalEnemyMovement.VerticalEnemyMove();
         EnemyMovement.HorizontalEnemyMove();
         PlayerLife.Health();
-        Timer.Countdown(60);
+        Timer.Countdown(temps);
     }
 }
