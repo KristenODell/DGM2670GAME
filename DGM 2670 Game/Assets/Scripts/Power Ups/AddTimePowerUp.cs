@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AddTimePowerUp : MonoBehaviour {
+public class AddTimePowerUp : PowerUpBase
+{
+    public float addTime;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    void Start ()
+    {
+        addTime = StaticVariables.addTemps;
+    }
+
+    void OnTriggerExit()
+    {
+        addTime += StaticVariables.temps;
+    }
 }

@@ -7,25 +7,34 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     public Text healthText;
-    public int health = 3;
+    public int healthVariable;
 
     public static Action Health;
 
 	void Start ()
     {
         Health = HealthHandler;
-        StaticVariables.originalHealth = health;
+        healthVariable = StaticVariables.health;
 	}
 
     void OnTriggerEnter ()
     {
-        health--;
+        healthVariable--;
         print("hit"); 
     }
 
     public void HealthHandler()
     {
-        switch (health)
+        if(healthVariable > 3)
+        {
+            healthVariable = 3;
+        }
+        if(healthVariable < 0)
+        {
+            healthVariable = 0;
+        }
+
+        switch (healthVariable)
         {
             case 3:
                 healthText.text = "Lives: 3";
@@ -36,7 +45,7 @@ public class PlayerLife : MonoBehaviour
             case 1:
                 healthText.text = "Lives: 1";
                 break;
-            default:
+            case 0:
                 healthText.text = "Lives: 0";
                 break;
         }

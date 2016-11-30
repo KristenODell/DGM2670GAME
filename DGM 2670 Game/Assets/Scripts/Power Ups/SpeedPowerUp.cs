@@ -1,15 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpeedPowerUp : MonoBehaviour{
+public class SpeedPowerUp : PowerUpBase
+{
+    public float speed;
+    public float speedPowerUp;
+    public float originalSpeed = 10;
+    public float wait = 10;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public IEnumerator IncreaseSpeed()
+    {
+        speed = speedPowerUp;
+        yield return new WaitForSeconds(wait);
+        speed = originalSpeed;
+    }
+
+    void Start ()
+    {
+        speed = StaticVariables.speed;
+        speedPowerUp = StaticVariables.powerUpSpeed;
+    }
+
+    public override void OnTriggerEnter()
+    {
+        StartCoroutine(IncreaseSpeed());
+        gameObject.SetActive(false);
+    }
+
 }
