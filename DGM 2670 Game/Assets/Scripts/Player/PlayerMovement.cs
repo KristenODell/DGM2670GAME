@@ -7,12 +7,12 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController myCC;
     //public float speed = 8;
     Vector3 tempPos;
-    public float speed;
+    //public float speed;
     public float speedPowerUp;
     public float originalSpeed = 10;
     public float wait = 1;
 
-    public IEnumerator IncreaseSpeed()
+    public IEnumerator IncreaseSpeed(float speed)
     {
         int i = 10;
         while (i > 0)
@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         myCC.Move(tempPos * Time.deltaTime);
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(IncreaseSpeed());
+            StartCoroutine(IncreaseSpeed(speed));
         }
     }
 }

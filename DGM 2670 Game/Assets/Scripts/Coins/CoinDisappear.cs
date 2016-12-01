@@ -4,25 +4,23 @@ using System.Collections;
 
 public class CoinDisappear : MonoBehaviour
 {
-    public int wait = 5;
+    public int wait = 1;
     public Transform coin;
     public Transform originalPosition;
     public Transform newPosition;
 
-    void Start ()
-    {
-        //originalColor = gameObject.GetComponent<Renderer>().material.color;
-    }
 
     public IEnumerator resetCoin()
     {
-        //gameObject.layer = 9;
-        //gameObject.GetComponent<Renderer>().material.color = newColor;
-        coin.position = newPosition.position; 
-        yield return new WaitForSeconds(wait);
+        int i = 10;
+        while (i > 0)
+        {
+            coin.position = newPosition.position;
+            yield return new WaitForSeconds(wait);
+            i--;
+        }
         coin.position = originalPosition.position;
-        //gameObject.layer = 8;
-        //gameObject.GetComponent<Renderer>().material.color = originalColor;
+
 
     }
 

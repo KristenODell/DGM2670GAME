@@ -25,15 +25,19 @@ public class CoinCounter : MonoBehaviour
         counter.text = "Coins: " + coins;
     }
 
-    public void BiggerHandler ()
+    public void BiggerHandler()
     {
-        if(coins > 10)
+        switch (coins)
         {
-            anim.SetBool("10Coins", true);
-        }
-        if (coins > 20)
-        {
-            anim.SetBool("20Coins", true);
+            case 10:
+                anim.SetBool("10Coins", true);
+                break;
+            case 20:
+                anim.SetBool("20Coins", true);
+                break;
+            case 30:
+                anim.SetBool("30Coins", true);
+                break;
         }
     }
     

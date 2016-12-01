@@ -10,11 +10,11 @@ public class UpdateFunction : MonoBehaviour
     public Text countdownTimer;
     public float temps;
     public float speed;
+    //public SpeedPowerUp _speedPowerUp;
 
     void Start ()
     {
         temps = StaticVariables.temps;
-        speed = StaticVariables.speed;
     }
 
 	// Update is called once per frame
