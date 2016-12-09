@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StartGameButton : MonoBehaviour, IStartGame
+public class StartGameButton : MonoBehaviour
 {
     public GameObject StartMenu;
 

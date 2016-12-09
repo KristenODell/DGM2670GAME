@@ -12,25 +12,14 @@ public class PlayerMovement : MonoBehaviour
     public float originalSpeed = 10;
     public float wait = 1;
 
-    public IEnumerator IncreaseSpeed(float speed)
-    {
-        int i = 10;
-        while (i > 0)
-        {
-            speed = speedPowerUp;
-            yield return new WaitForSeconds(wait);
-            i--;
-         }
-        speed = originalSpeed;
-    }
 
-    public static Action<float> PlayerMove;
+    //public static Action<float> PlayerMove;
 
 	// Use this for initialization
 	void Start ()
     {
         myCC = GetComponent<CharacterController>();
-        PlayerMove = PlayerMoveHandler;
+        UpdateFunction.PlayerMove += PlayerMoveHandler;
 	}
 	
 	public void PlayerMoveHandler (float speed)
@@ -38,9 +27,5 @@ public class PlayerMovement : MonoBehaviour
         tempPos.x = speed * Input.GetAxis("Horizontal");
         tempPos.z = speed * Input.GetAxis("Vertical");
         myCC.Move(tempPos * Time.deltaTime);
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(IncreaseSpeed(speed));
-        }
     }
 }

@@ -5,12 +5,16 @@ public class Damage : MonoBehaviour
 {
 
     public GameObject playerHalo;
-    public float wait = 2;
+    public float wait = 1;
+    public int damageWait = 2;
 
     public IEnumerator damageHalo()
     {
-        playerHalo.SetActive(true);
-        yield return new WaitForSeconds(wait);
+        for (int i = 0; i < damageWait; i++)
+        {
+            playerHalo.SetActive(true);
+            yield return new WaitForSeconds(wait);
+        }
         playerHalo.SetActive(false);
     }
 
@@ -19,9 +23,10 @@ public class Damage : MonoBehaviour
         playerHalo.SetActive(false);
     }
 	
-    void OnCollisionEnter ()
+    void OnTriggerEnter ()
     {
         StartCoroutine(damageHalo());
+        print("ouch");
     }
 
 }

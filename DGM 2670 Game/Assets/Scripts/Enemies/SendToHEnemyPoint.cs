@@ -1,20 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
-using System.Collections.Generic;
 
 public class SendToHEnemyPoint : MonoBehaviour
 {
-    public List<GameObject> hEnemies;
-
-
-    void AddToList(GameObject _go)
-    {
-        hEnemies.Add(_go);
-    }
+    public static Action<Transform> SendThis;
 
     void Start()
     {
-        VEnemyList.SendThis += AddToList;
+        SendThis(transform);
     }
+
 }

@@ -10,7 +10,15 @@ public class UpdateFunction : MonoBehaviour
     public Text countdownTimer;
     public float temps;
     public float speed;
-    //public SpeedPowerUp _speedPowerUp;
+
+    public static Action MoveVEnemies;
+    public static Action MoveHEnemies;
+    public static Action Bigger;
+    //public static Action Health;
+    public static Action<float> Countdown;
+    public static Action<float> PlayerMove;
+    public static Action<float> EndGameTimer;
+    public static Action EndGameHealth;
 
     void Start ()
     {
@@ -21,12 +29,16 @@ public class UpdateFunction : MonoBehaviour
 	void Update ()
     {
         temps -= Time.deltaTime;
-        PlayerMovement.PlayerMove(speed);
-        VerticalEnemyMovement.VerticalEnemyMove();
-        EnemyMovement.HorizontalEnemyMove();
+        PlayerMove(speed);
         PlayerLife.Health();
-        Timer.Countdown(temps);
-        //Bullet.Shooting(30);
-        CoinCounter.Bigger();
+        Countdown(temps);
+        Bigger();
+        if (MoveVEnemies != null)
+        {
+            MoveVEnemies();
+        }
+        MoveHEnemies();
+        EndGameTimer(temps);
+        EndGameHealth();
     }
 }

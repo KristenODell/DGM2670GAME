@@ -4,7 +4,7 @@ using System.Collections;
 public class SpeedPowerUp : PowerUpBase
 {
     public float speedPowerUp = 20;
-    public float originalSpeed = 10;
+    public float originalSpeed = 15;
     public float wait = 1;
     //public float speed = 10;
 
@@ -19,7 +19,7 @@ public class SpeedPowerUp : PowerUpBase
             yield return new WaitForSeconds(wait);
             i--;
         }
-        speed.speed = 10;
+        speed.speed = 15;
     }
 
     public IEnumerator Waiting ()

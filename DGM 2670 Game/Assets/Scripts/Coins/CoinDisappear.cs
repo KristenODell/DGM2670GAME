@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class CoinDisappear : MonoBehaviour
+public class CoinDisappear : MonoBehaviour, ICoin
 {
     public int wait = 1;
     public Transform coin;
@@ -20,11 +20,14 @@ public class CoinDisappear : MonoBehaviour
             i--;
         }
         coin.position = originalPosition.position;
+    }
 
+    public void Start ()
+    {
 
     }
 
-    void OnTriggerEnter()
+    public void OnTriggerEnter()
     {
         StartCoroutine(resetCoin());
     }

@@ -7,12 +7,12 @@ public class EnemyMovement : MonoBehaviour, IMoveEnemy
     public float speed = 1;
     private Vector3 tempPos;
 
-    public static Action HorizontalEnemyMove;
+    //public static Action HorizontalEnemyMove;
 
     // Use this for initialization
     void Start()
     {
-        HorizontalEnemyMove = EnemyMoveHandler;
+        UpdateFunction.MoveHEnemies += EnemyMoveHandler;
     }
 
     void OnTriggerEnter()

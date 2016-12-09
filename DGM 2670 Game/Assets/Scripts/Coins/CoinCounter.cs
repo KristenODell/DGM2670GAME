@@ -3,23 +3,22 @@ using UnityEngine.UI;
 using System.Collections;
 using System;
 
-public class CoinCounter : MonoBehaviour
+public class CoinCounter : MonoBehaviour, ICoin
 {
     public Text counter;
     public int coins = 0;
-
     private Animator anim;
 
-    public static Action Bigger;
+    //public static Action Bigger;
 
-    void Start ()
+    public void Start ()
     {
         counter.text = "Coins: " + coins;
         anim = GetComponent<Animator>();
-        Bigger = BiggerHandler;
+        UpdateFunction.Bigger += BiggerHandler;
     }
 
-    void OnTriggerEnter()
+    public void OnTriggerEnter()
     {
         coins++;
         counter.text = "Coins: " + coins;

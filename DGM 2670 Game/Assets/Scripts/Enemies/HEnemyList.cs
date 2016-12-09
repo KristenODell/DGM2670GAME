@@ -4,13 +4,11 @@ using System;
 
 public class HEnemyList : MonoBehaviour
 {
-    public static Action<GameObject> SendThis;
+    public static Action<Transform> SendThis;
 
     void Start()
     {
-        if (SendThis != null)
-        {
-            SendThis(gameObject);
-        }
+        SendThis(transform);
     }
+
 }

@@ -6,11 +6,11 @@ using System;
 public class Timer : MonoBehaviour
 {
     public Text countdownTimer;
-    public static Action<float> Countdown;
+    //public static Action<float> Countdown;
 
     void Awake ()
     {
-        Countdown = CountdownHandler;
+        UpdateFunction.Countdown = CountdownHandler;
     }
 
     public void CountdownHandler(float temps)

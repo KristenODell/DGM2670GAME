@@ -11,16 +11,32 @@ public class PlayerLife : MonoBehaviour
 
     public static Action Health;
 
-	void Start ()
+    public GameObject playerHalo;
+    public float wait = 1;
+    public int damageWait = 2;
+    public int damage = 1;
+
+    public IEnumerator damageHalo()
     {
-        Health = HealthHandler;
+        for (int i = 0; i < damageWait; i++)
+        {
+            playerHalo.SetActive(true);
+            yield return new WaitForSeconds(wait);
+        }
+        playerHalo.SetActive(false);
+    }
+
+    void Start ()
+    {
+        Health= HealthHandler;
         healthVariable = StaticVariables.health;
+        playerHalo.SetActive(false);
 	}
 
     void OnTriggerEnter ()
     {
-        healthVariable--;
-        print("hit"); 
+        healthVariable = StaticFunction.Subtract(healthVariable, damage);
+        StartCoroutine(damageHalo());
     }
 
     public void HealthHandler()
