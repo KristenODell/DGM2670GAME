@@ -24,7 +24,7 @@ public class CoinDisappear : MonoBehaviour, ICoin
 
     public void Start ()
     {
-
+        print("Coin is going to disappear");
     }
 
     public void OnTriggerEnter()

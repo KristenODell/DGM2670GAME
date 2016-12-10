@@ -14,7 +14,6 @@ public class UpdateFunction : MonoBehaviour
     public static Action MoveVEnemies;
     public static Action MoveHEnemies;
     public static Action Bigger;
-    //public static Action Health;
     public static Action<float> Countdown;
     public static Action<float> PlayerMove;
     public static Action<float> EndGameTimer;

@@ -6,7 +6,6 @@ public class SpeedPowerUp : PowerUpBase
     public float speedPowerUp = 20;
     public float originalSpeed = 15;
     public float wait = 1;
-    //public float speed = 10;
 
     public UpdateFunction speed;
 
@@ -29,13 +28,6 @@ public class SpeedPowerUp : PowerUpBase
         base.OnTriggerEnter();
     }
 
-    void Start ()
-    {
-        //speed = StaticVariables.speed;
-        //speedPowerUp = StaticVariables.powerUpSpeed;
-        //originalSpeed = StaticVariables.speed;
-        //speed = 10;
-    }
 
     public override void OnTriggerEnter()
     {

@@ -9,7 +9,6 @@ public class CoinCounter : MonoBehaviour, ICoin
     public int coins = 0;
     private Animator anim;
 
-    //public static Action Bigger;
 
     public void Start ()
     {
