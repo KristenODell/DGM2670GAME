@@ -4,6 +4,9 @@ using System.Collections;
 
 public class CoinDisappear : MonoBehaviour, ICoin
 {
+    // Coroutine
+    // While Loop
+    // Interface
     public int wait = 1;
     public Transform coin;
     public Transform originalPosition;

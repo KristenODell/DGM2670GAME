@@ -5,8 +5,8 @@ using System;
 
 public class Timer : MonoBehaviour
 {
+    // Monobehaviour Awake
     public Text countdownTimer;
-    //public static Action<float> Countdown;
 
     void Awake ()
     {

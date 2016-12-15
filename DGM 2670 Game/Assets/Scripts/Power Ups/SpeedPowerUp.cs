@@ -3,6 +3,10 @@ using System.Collections;
 
 public class SpeedPowerUp : PowerUpBase
 {
+    // While Loop
+    // 2 Coroutines
+    // Polymorphism
+    // Inheritance
     public float speedPowerUp = 20;
     public float originalSpeed = 15;
     public float wait = 1;

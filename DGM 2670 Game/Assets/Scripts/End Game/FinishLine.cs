@@ -4,7 +4,7 @@ using System.Collections;
 
 public class FinishLine : EndGameBase
 {
-
+    // Monobehaviour OnTriggerExit
 
 	void OnTriggerExit ()
     { 

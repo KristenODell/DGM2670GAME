@@ -5,15 +5,14 @@ using System.Collections.Generic;
 
 public class EnemyLocationController : MonoBehaviour
 {
+    // Lists
+    // Delegate
+    // 2 Foreach loops
     public List<Transform> HList;
     public List<Transform> HPositionList;
     public List<Transform> VList;
     public List<Transform> VPositionList;
 
-    //public IEnumerator MovingEnemies()
-    //{
-
-    //}
 
     // Use this for initialization
     void Start()

@@ -5,6 +5,9 @@ using System;
 
 public class EndGameBase : MonoBehaviour
 {
+    // Coroutine
+    // For Loop
+    // Inheritance
     public GameObject gameOver;
     public Canvas endGame;
     public int waitForAnimation = 1;

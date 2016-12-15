@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    // Delegate
+    // Switch Statement
+    // For Loop
     public Text healthText;
     public int healthVariable;
 

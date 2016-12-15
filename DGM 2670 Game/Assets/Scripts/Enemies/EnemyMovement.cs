@@ -4,10 +4,10 @@ using System;
 
 public class EnemyMovement : MonoBehaviour, IMoveEnemy
 {
+    // Interface
     public float speed = 1;
     private Vector3 tempPos;
 
-    //public static Action HorizontalEnemyMove;
 
     // Use this for initialization
     void Start()

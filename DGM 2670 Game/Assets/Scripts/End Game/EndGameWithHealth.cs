@@ -3,6 +3,8 @@ using System.Collections;
 
 public class EndGameWithHealth : EndGameBase
 {
+    // Polymorphism
+    // Inheritance
     public PlayerLife health;
 
     public override void Start ()

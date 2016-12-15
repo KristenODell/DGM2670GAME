@@ -5,6 +5,9 @@ using System;
 
 public class CoinCounter : MonoBehaviour, ICoin
 {
+    // Switch Statement
+    // Monobehaviour OnTriggerEnter
+    // Interface
     public Text counter;
     public int coins = 0;
     private Animator anim;

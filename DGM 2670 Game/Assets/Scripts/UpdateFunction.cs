@@ -5,6 +5,8 @@ using System;
 
 public class UpdateFunction : MonoBehaviour
 {
+    // Delegates
+    // Monobehaviour Update
     public Text healthText;
     public Text counter;
     public Text countdownTimer;

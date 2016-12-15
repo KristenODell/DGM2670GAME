@@ -4,16 +4,12 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Function with Parameters
     private CharacterController myCC;
-    //public float speed = 8;
     Vector3 tempPos;
-    //public float speed;
     public float speedPowerUp;
     public float originalSpeed = 10;
     public float wait = 1;
-
-
-    //public static Action<float> PlayerMove;
 
 	// Use this for initialization
 	void Start ()

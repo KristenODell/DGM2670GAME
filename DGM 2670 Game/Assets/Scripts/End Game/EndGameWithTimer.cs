@@ -3,7 +3,9 @@ using System.Collections;
 
 public class EndGameWithTimer : EndGameBase
 {
-    
+    // Monobehaviour StartCoroutine
+    // Polymorphism
+    // Inheritance   
     public override void Start ()
     {
         base.Start();
